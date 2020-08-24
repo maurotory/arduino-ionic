@@ -11,6 +11,14 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'bluetooth',
+    loadChildren: () => import('./bluetooth/bluetooth.module').then( m => m.BluetoothPageModule)
+  },
+  {
+    path: 'robotcar',
+    loadChildren: () => import('./robotcar/robotcar.module').then( m => m.RobotcarPageModule)
+  },
 ];
 
 @NgModule({

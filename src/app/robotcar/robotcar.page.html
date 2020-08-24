@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>robotcar</ion-title>
+
+    <ion-buttons slot="end">
+      <ion-back-button defaultHref="/">
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+    
+    <ion-list>
+      <ion-item>
+        <ion-label>Automatic</ion-label>
+        <ion-toggle [(ngModel)]="automatic" (ionChange)="notify()"></ion-toggle>
+      </ion-item>
+    </ion-list>
+
+  <ion-card class="card">
+    <ion-card-content class="cardcontent">
+
+      <ion-fab vertical="center" horizontal="start" edge slot="fixed">
+        <ion-fab-button color="success" (click)="moveLeft()">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    
+      <ion-fab vertical="center" horizontal="end" edge slot="fixed">
+        <ion-fab-button color="success" (click)="moveRigth()">
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    
+      <ion-fab vertical="top" horizontal="center" edge slot="fixed">
+        <ion-fab-button color="success" (click)="moveForward()">
+          <ion-icon name="arrow-up-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+    
+      <ion-fab vertical="bottom" horizontal="center" edge slot="fixed">
+        <ion-fab-button color="success" (click)="moveBackwards()">
+          <ion-icon name="arrow-down-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+
+      <ion-fab vertical="center" horizontal="center" edge slot="fixed">
+        <ion-fab-button color="danger" (click)="stop()">
+          <ion-icon name="pause-outline"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-list>
+    <ion-item>
+      <ion-range min="0" max="100" [(ngModel)]="potency" color="danger" pin="true" (ionChange)="rangeChange()"></ion-range>
+    </ion-item>
+  </ion-list>
+  
+
+
+</ion-content>

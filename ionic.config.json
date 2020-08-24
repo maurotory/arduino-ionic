@@ -1,5 +1,7 @@
 {
   "name": "App_Arduino",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
